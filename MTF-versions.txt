@@ -1,0 +1,31 @@
+*============================================================================*
+* MegaTeamFortress 10.12.14                                 MTF-versions.txt *
+*============================================================================*
+
+The original QuakeWorld MegaTeamFortress based on 08.22.06 + upgrades. No gameplay changes. FINALLY open-sourced.
+Maintained by Up2nOgOod[ROCK]
+https://github.com/quaketf
+http://www.quakeworld.nu
+
+
+Changelog:
+
+--------------------------------------------
+Version 10.12.14				  10/12/2014
+--------------------------------------------
+
+Changes:
+	- Added a 3 second prematch countdown written in console (Up2)
+	- Added how many minutes left in the game, every minute (Up2)
+	- Synced remaining time with ezQuake (Up2)
+	- Match results output from TF2.9 (Up2)
+	- Mod now displays "[auto]" after a player autoteams (Up2)
+	- Updated status bar code/formatting (Up2)
+	- Removed lots of unnecessary code (Up2)
+
+Bugs Fixed:
+	- Players respawn with the velocity of their last death (twincannon)
+	
+Known Bugs:
+	- Times are off by 1-4 seconds. No idea why, this was in the original MTF and fixed in regTF2.95
+
