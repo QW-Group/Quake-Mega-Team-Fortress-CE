@@ -1,6 +1,6 @@
 # Quake Mega Team-Fortress CE
 
-**COMPILES yet it has a change team bug**
+**COMPILES and currently works**
 
 The compiled qwprogs.dat is included in the fortress filder along with the server config scripts. The server configs are setup to run with any modification, though you may want to change the server name and rcon to somthing. (head kick will cause the server to crash after some time, so it's turned off, because it's useless for a CE server)
 
