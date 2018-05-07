@@ -21,3 +21,5 @@ sudo chmod -R 777 MegaTF_ClanEdition
 cd MegaTF_ClanEdition
 
 ./gmqcc -std=fteqcc -O3
+
+or for windows use fteqccgui.exe and select O2 optimizations and apply
