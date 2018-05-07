@@ -1166,7 +1166,7 @@ void() T_TranqDartTouch =
 			if (other.tfstate & 32768)
 			{
 				timer = find(world, classname, "timer");
-				while (timer.owner != other || timer.think != TranquiliserTimer && timer != world)
+				while ((timer.owner != other || timer.think != TranquiliserTimer) && timer != world)
 				{
 					timer = find(timer, classname, "timer");
 				}

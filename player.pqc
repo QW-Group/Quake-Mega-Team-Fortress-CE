@@ -24,7 +24,7 @@ void() player_touch =
 		{
 			if (self.undercover_team != TF_FLARE_LIT || self.undercover_skin != TF_FLARE_LIT)
 			{
-				if (other.playerclass == 8 || other.playerclass == 1 && other.team_no != self.team_no)
+				if ( (other.playerclass == 8 || other.playerclass == 1) && other.team_no != self.team_no)
 				{
 					sprint(other, 2, "Wait a minute... he's a Spy!\n");
 					sprint(self, 2, "The enemy sees through your disguise!\n");
@@ -34,7 +34,7 @@ void() player_touch =
 			}
 			if (other.undercover_team != TF_FLARE_LIT || other.undercover_skin != TF_FLARE_LIT)
 			{
-				if (self.playerclass == 8 || self.playerclass == 1 && self.team_no != other.team_no)
+				if ( (self.playerclass == 8 || self.playerclass == 1) && self.team_no != other.team_no)
 				{
 					sound(other, 2, "speech/pekaboo.wav", 1, 1);
 					sprint(self, 2, "Wait a minute... he's a Spy!\n");

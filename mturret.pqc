@@ -1,4 +1,4 @@
-.float rotate_type;
+//comperr .float rotate_type;
 
 void() turret_ret2;
 void() turret_active;

@@ -1,4 +1,4 @@
-.string oldweaponmodel;
+//comperr .string oldweaponmodel;
 
 void() TeamFortress_NightVision =
 {
@@ -557,7 +557,8 @@ void () Prox =
 	{
 		if ((_l_11464.owner == self))
 		{
-			local float proxyDistance = vlen(_l_11464.origin - self.origin);
+			local float proxyDistance; //comperr
+			proxyDistance = vlen(_l_11464.origin - self.origin);
 			if (proxyDistance < 40)
 			{
 				dremove(_l_11464);

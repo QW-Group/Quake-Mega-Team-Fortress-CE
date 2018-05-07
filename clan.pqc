@@ -135,7 +135,7 @@ void () DumpClanScores =
 		players4 = substring(players4, 0, 4); //let's just make sure it's at most 4 characters
 	}
 	
-	bprint2 (2, players1, space1, players2, space2, players3, space3, players4);
+//comperr	bprint2 (2, players1, space1, players2, space2, players3, space3, players4);
 
 /*	//Print the number of FRAGS per team, assuming 9999 max frags
 	bprint (2, "\nFrags:       ");
@@ -322,7 +322,7 @@ void () DumpClanScores =
 		t4score = substring(t4score, 0, 4); //let's just make sure it's at most 4 characters
 	}
 	
-	bprint2 (2, t1score, space1, t2score, space2, t3score, space3, t4score);
+//comperr	bprint2 (2, t1score, space1, t2score, space2, t3score, space3, t4score);
 	//End print Team Scores
 	
 	

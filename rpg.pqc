@@ -311,7 +311,7 @@ void() RemoveVote2 =
 	head = nextent(head); 
 	}
 	return;
-	dremove (self);
+//comperr	dremove (self);
 };
 
 // PROZAC STUFF (Needs Often's Prozac Server.)

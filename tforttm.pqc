@@ -4,7 +4,7 @@ float (float tno) TeamFortress_TeamGetLives;
 float (float tno) TeamFortress_TeamGetMaxPlayers;
 string (float tno) TeamFortress_TeamGetColorString;
 float (float tno) TeamFortress_TeamGetIllegalClasses;
-float quadscore;
+//comperr float quadscore;
 
 // pablo. get score.
 float (float tno) TeamFortress_GetRealScore =
@@ -840,7 +840,7 @@ void(entity Player) TeamFortress_TeamShowMemberClasses =
 	e = find(world, classname, "player");
 	while (e)
 	{
-		if (e.team_no == Player.team_no || e.team_no == 0 && e != Player)
+		if ( (e.team_no == Player.team_no || e.team_no == 0) && e != Player)
 		{
 			if (e.model != string_null)
 			{

@@ -29,10 +29,11 @@ void (string put) votemap_start;
 // HW spam lessener
 .float hw_message_resttime;
 
-float airscout, drop3, drop2, drop1;
+//comperr float airscout, drop3, drop2, drop1;
+float airscout;
 void (float _p_10136) TeamFortress_ItemStatus;
 
-float prematch;
+//comperr float prematch;
 
 void () lay;
 void () unlay;
@@ -2696,6 +2697,7 @@ void () S_Mine =
 {
 	local entity te;
 	local float spikecount;
+	spikecount = 0; //comperr
 
 	te = find (world, classname, "drop1");
 	while (te)
