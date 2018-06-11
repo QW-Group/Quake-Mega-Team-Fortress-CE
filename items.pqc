@@ -260,8 +260,11 @@ void() item_megahealth_rot =
 void() armor_touch = 
 {
 	local float type;
+	type = 0; //comperr
 	local float value;
 	local float bit;
+	value = 0; //comperr
+	bit = 0; //comperr
 	local float rnum;
 	local string s;
 	local entity oldself;
@@ -548,6 +551,7 @@ void() weapon_touch =
 	local float hadammo;
 	local float best;
 	local float new;
+	new = 0;
 	local float old;
 	local entity stemp;
 	local float leave;
@@ -800,54 +804,63 @@ void(entity pl, float typ) PrintGrenadeType =
 	if (typ == TF_FLARE_OFF)
 	{
 		st = "Normal";
+		sprint(pl, 2, st);
 	}
 	else
 	{
 		if (typ == 2)
 		{
 			st = "Concussion";
+			sprint(pl, 2, st);
 		}
 		else
 		{
 			if (typ == 3)
 			{
 				st = "Nail";
+				sprint(pl, 2, st);
 			}
 			else
 			{
 				if (typ == 4)
 				{
 					st = "Mirv";
+					sprint(pl, 2, st);
 				}
 				else
 				{
 					if (typ == 5)
 					{
 						st = "Napalm";
+						sprint(pl, 2, st);
 					}
 					else
 					{
 						if (typ == 6)
 						{
 							st = "Flare";
+							sprint(pl, 2, st);
 						}
 						else
 						{
 							if (typ == 7)
 							{
 								st = "Gas";
+								sprint(pl, 2, st);
 							}
 							else
 							{
 								if (typ == 8)
 								{
 									st = "EMP";
+									sprint(pl, 2, st);
 								}
 								else
 								{
 									if (typ == 9)
 									{
 										st = "Flash";
+										sprint(pl, 2, st);
 									}
 								}
 							}
@@ -857,7 +870,7 @@ void(entity pl, float typ) PrintGrenadeType =
 			}
 		}
 	}
-	sprint(pl, 2, st);
+//comperr	sprint(pl, 2, st);
 };
 
 float() GetGrenadePossibility = 

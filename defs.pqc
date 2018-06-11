@@ -336,7 +336,7 @@ void (vector ang) makevectors = #1;
 void (entity e, vector o) setorigin = #2; 
 void (entity e, string m) setmodel = #3; 
 void (entity e, vector min, vector max) setsize = #4; 
-void () break = #6; 
+//comperr void () break = #6; 
 float () random = #7; 
 void (entity e, float chan, string samp, float vol, float atten) sound = #8; 
 vector (vector v) normalize = #9; 
@@ -513,6 +513,7 @@ void () Cam;
 void () DetpackDisarm;
 float drop1;
 float drop2;
+float drop3;
 
 void (entity _p_1912) camera_die;
 void () camera_expire;

@@ -1836,7 +1836,8 @@ void (float inp) Menu_EngineerFix_SentryGun_Input =
 				if ((inp == 4))
 				{
 					local entity isneardoor;
-					local float candismantle;
+					local float candismantle; //comperr
+					candismantle = 0;
 					isneardoor = findradius (self.origin, 200);
 					while (isneardoor)
 					{

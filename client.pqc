@@ -13,13 +13,13 @@ void () SetUpPrematch;
 
 // 11.11.04 stuff
 void (entity _p_11534) TeamFortress_PrintPMTimeLeft;
-float footsteps;
-float old_gl;
-float exec_class;
-float coloredlights;
+//comperr float footsteps;
+//comperr float old_gl;
+//comperr float exec_class;
+//comperr float coloredlights;
 float sr_gren1;
 float sr_gren2;
-float sr_airmirv;
+//comperr float sr_airmirv;
 void () DumpClanScores;
 
 // pablo. class restrictions.

@@ -31,7 +31,7 @@ void () PrematchCountDown =
 		while (te)
 		{
 			//bprint (2, "MATCH BEGINS NOW\n");
-			CenterPrint2(te, st, "Attack!");	
+//			CenterPrint2(te, st, "Attack!");	
 			stuffcmd(te, "bf\n");
 			T_Damage (te, te, te, 500);
 			te.real_frags = 0;
@@ -184,22 +184,22 @@ void () PrematchCountDown =
 	//MTF players like the centerprint as well.
 	// Todo: why can't I get the countdown to be longer than 3 seconds?
 	if (self.health == 3) {
-		stcenterpring = "\n3...";
+//		stcenterpring = "\n3...";
 		bprint (self, "3 seconds.\n");
 	}
 	else if (self.health == 2) {
-		stcenterpring = "\n\n2...";
+//		stcenterpring = "\n\n2...";
 		bprint (self, "2 seconds.\n");
 	}
 	else if (self.health == 1) {
-		stcenterpring = "\n\n\n1...";
+//		stcenterpring = "\n\n\n1...";
 		bprint (self, "1 second.\n");
 	}
 	
 	te = find(world, classname, "player");
 	while (te != world)
 	{
-		CenterPrint(te, stcenterpring);
+//		CenterPrint(te, stcenterpring);
 		stuffcmd(te, "bf\n");
 		te = find(te, classname, "player");
 	}

@@ -654,7 +654,7 @@ void() lightning_use =
 		dprint("missing lightning targets\n");
 		return;
 	}
-	if (le1.state != TF_FLARE_LIT && le1.state != TF_FLARE_OFF || (le2.state != TF_FLARE_LIT && le2.state != TF_FLARE_OFF) || le1.state != le2.state)
+	if ( (le1.state != TF_FLARE_LIT && le1.state != TF_FLARE_OFF) || (le2.state != TF_FLARE_LIT && le2.state != TF_FLARE_OFF) || le1.state != le2.state)
 	{
 		return;
 	}

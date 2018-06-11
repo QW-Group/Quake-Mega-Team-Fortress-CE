@@ -60,6 +60,7 @@ void (entity pl) RefreshStatusBar =
 		t1name = "\sBlue\s: ";
 		st = ftos(team1score);
 		t1score = substring(st, 0, 4);
+		t1full = strcat(t1name,t1score);
 	}
 	if (t2_pl > 0) {
 		no_teams = no_teams + 1;
@@ -68,6 +69,7 @@ void (entity pl) RefreshStatusBar =
 			t2name = " \sRed\s: ";
 		st = ftos(team2score);
 		t2score = substring(st, 0, 4);
+		t2full = strcat(t2name,t2score);
 	}
 	if (t3_pl > 0) {
 		no_teams = no_teams + 1;
@@ -76,6 +78,7 @@ void (entity pl) RefreshStatusBar =
 			t3name = " \sYell\s: ";
 		st = ftos(team3score);
 		t3score = substring(st, 0, 4);
+		t3full = strcat(t3name,t3score);
 	}
 	if (t4_pl > 0) {
 		no_teams = no_teams + 1;
@@ -84,16 +87,17 @@ void (entity pl) RefreshStatusBar =
 			t4name = " \sGrn\s: ";
 		st = ftos(team4score);
 		t4score = substring(st, 0, 4);
+		t4full = strcat(t4name,t4score);
 	}
 	
-	t1full = strcat(t1name,t1score);
-	t2full = strcat(t2name,t2score);
-	t3full = strcat(t3name,t3score);
-	t4full = strcat(t4name,t4score);
+//comperr	t1full = strcat(t1name,t1score);
+//comperr	t2full = strcat(t2name,t2score);
+//comperr	t3full = strcat(t3name,t3score);
+//comperr	t4full = strcat(t4name,t4score);
 	
-	t12full = strcat(t1full,t2full);
-	t34full = strcat(t3full,t4full);
-	print_scores = strcat(t12full,t34full);
+//comperr	t12full = strcat(t1full,t2full);
+//comperr	t34full = strcat(t3full,t4full);
+//comperr	print_scores = strcat(t12full,t34full);
 	
 	
 	gren1 = strcat(" \sG\s: ", ftos (self.no_grenades_1));
@@ -108,7 +112,7 @@ void (entity pl) RefreshStatusBar =
 		local string disguise_state;
 		disguise_state = DisguiseString (pl);
 		
-		centerprint (pl, status_size, disguise_state, print_scores, clip_print, gren_print);
+//comperr		centerprint (pl, status_size, disguise_state, print_scores, clip_print, gren_print);
 		return;
 	}
 	else if (pl.playerclass == 9) {
@@ -117,7 +121,7 @@ void (entity pl) RefreshStatusBar =
 			sentry_health = SentryHealth (pl);
 			sentry_details = SentryDetails (pl);
 			
-			centerprint (pl, status_size, sentry_health, sentry_details, print_scores, clip_print, gren_print);
+//comperr			centerprint (pl, status_size, sentry_health, sentry_details, print_scores, clip_print, gren_print);
 			return;
 		}
 		else if (self.is_building) {
@@ -134,7 +138,7 @@ void (entity pl) RefreshStatusBar =
 				if ((playerent.owner == pl)) {
 					dpacktime = DetpackTimeToString (playerent);
 					spacer = "                          ";
-					centerprint (pl, status_size, spacer, dpacktime, print_scores, clip_print, gren_print);
+//comperr					centerprint (pl, status_size, spacer, dpacktime, print_scores, clip_print, gren_print);
 					return;
 				}
 				playerent = find (playerent, classname, "countdown_timer");
@@ -142,7 +146,7 @@ void (entity pl) RefreshStatusBar =
 		}
 	}
 	
-	centerprint (pl, status_size, misc, print_scores, clip_print, gren_print);
+//comperr	centerprint (pl, status_size, misc, print_scores, clip_print, gren_print);
 };
 
 string (entity pl) GetStatusSize =
@@ -221,41 +225,55 @@ string (entity pl) ClipSize =
 			pl.reload_shotgun = 8 - pl.ammo_shells;
 		clip = 8 - pl.reload_shotgun;
 		clip_print = strcat (" \sClip\s: ", ftos(clip));
+		return (clip_print);
     }
 	else if (pl.current_weapon == 256) {
 		if ((16 - pl.reload_super_shotgun) > pl.ammo_shells)
 			pl.reload_super_shotgun = 16 - pl.ammo_shells;
 		clip = (16 - pl.reload_super_shotgun);
 		clip_print = strcat (" \sClip\s: ", ftos(clip));
+		return (clip_print);
 	}
 	else if (pl.current_weapon == 2048) {
 		if ((6 - pl.reload_grenade_launcher) > pl.ammo_rockets)
 			pl.reload_grenade_launcher = (6 - pl.ammo_rockets);
 		clip = (6 - pl.reload_grenade_launcher);
 		clip_print = strcat (" \sClip\s: ", ftos(clip));
+		return (clip_print);
 	}
 	else if (pl.current_weapon == 8192) {
 		if ((4 - pl.reload_rocket_launcher) > pl.ammo_rockets)
 			pl.reload_rocket_launcher = (4 - pl.ammo_rockets);
 		clip = (4 - pl.reload_rocket_launcher);
 		clip_print = strcat (" \sClip\s: ", ftos(clip));
+		return (clip_print);
 	}
 	
-	return (clip_print);
+//comperr	return (clip_print);
+return;
 };
 
 string (entity pl) DisguiseString =
 {
     local string under_team, under_class, disguise_print;
-		
-	if (pl.undercover_team == 1)
+/*		
+	if (pl.undercover_team == 1){
 		under_team = "Blue";
-	if (pl.undercover_team == 2)
+		disguise_print = strcat(under_team, under_class);
+	}
+	if (pl.undercover_team == 2){
 		under_team = "Red";
-	if (pl.undercover_team == 3)
+		disguise_print = strcat(under_team, under_class);
+	}
+	if (pl.undercover_team == 3){
 		under_team = "Yell";
-	if (pl.undercover_team == 4)
+		disguise_print = strcat(under_team, under_class);
+	}
+	if (pl.undercover_team == 4){
 		under_team = "Grn";
+		disguise_print = strcat(under_team, under_class);
+	}
+*/
 
 	if (!pl.undercover_skin) {
 		under_class = ("\n");
@@ -286,8 +304,30 @@ string (entity pl) DisguiseString =
     if (invis_only)
 		under_class = ("Undercover\n");
 	
-	disguise_print = strcat(under_team, under_class);
-	return (disguise_print);
+//comperr	disguise_print = strcat(under_team, under_class);
+//comperr	return (disguise_print);
+
+    if (pl.undercover_team == 1){
+                under_team = "Blue";
+                disguise_print = strcat(under_team, under_class);
+		return (disguise_print);
+        }
+        if (pl.undercover_team == 2){
+                under_team = "Red";
+                disguise_print = strcat(under_team, under_class);
+		return (disguise_print);
+        }
+        if (pl.undercover_team == 3){
+                under_team = "Yell";
+                disguise_print = strcat(under_team, under_class);
+		return (disguise_print);
+        }
+        if (pl.undercover_team == 4){
+                under_team = "Grn";
+                disguise_print = strcat(under_team, under_class);
+		return (disguise_print);
+        }
+
 };
 
 string (entity pl) SentryDetails =
